@@ -8,9 +8,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>$Title$</title>
+    <title>hello</title>
   </head>
   <body>
-  $END$
+  <form>
+    用户名: <input type="text" name="用户名："><br>
+    密码: <input type="password" name="密码">
+
+  </form>
+
   </body>
 </html>
