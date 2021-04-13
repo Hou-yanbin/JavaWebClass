@@ -10,7 +10,7 @@ import java.sql.*;
  * @data 2021/4/6/16:42
  * @Description:
  **/
-public class Demo1 {
+public class   Demo1 {
     public static void main(String[] args) {
         //1.加载驱动
         try {
