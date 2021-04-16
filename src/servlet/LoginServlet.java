@@ -1,4 +1,4 @@
-package uzz.bookstore.servlet;
+package servlet;
 
 import java.io.IOException;
 

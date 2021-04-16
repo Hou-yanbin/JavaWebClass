@@ -47,7 +47,6 @@ public class LoginServlet1 extends HttpServlet {
         //设置响应的文档类型和编码方式
         response.setContentType("text/html;charset=utf-8");
         //把表单输入的内容取出来
-        System.out.println("hello");
         String username=request.getParameter("username");
         String userpass=request.getParameter("userpass");
         //输出流
