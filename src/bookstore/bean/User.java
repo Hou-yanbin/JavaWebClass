@@ -1,4 +1,4 @@
-package bean;
+package bookstore.bean;
 
 public class User {
 private String username,userpass,email,telephone,company,address;
