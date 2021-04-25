@@ -26,6 +26,7 @@ public class BookDao {
         ResultSet rs = null;
 
         try {
+
             ps = conn.prepareStatement(sql);
             rs = ps.executeQuery();
             while (rs != null && rs.next()) {
