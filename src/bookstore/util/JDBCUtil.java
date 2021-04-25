@@ -19,7 +19,7 @@ public class JDBCUtil {
 		}
 		String url="jdbc:mysql://localhost:3306/bookstore?useUnicode=true&&characterEncoding=utf8";
 		String user="root";
-		String password="123456";
+		String password="7758521";
 		try {
 			conn=DriverManager.getConnection(url,user,password);
 		} catch (SQLException e) {

@@ -1,5 +1,8 @@
 package bookstore.servlet;
 
+import bookstore.Dao.UserDao;
+import bookstore.bean.User;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -13,6 +16,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class LoginServlet1
@@ -49,6 +53,9 @@ public class LoginServlet1 extends HttpServlet {
         //把表单输入的内容取出来
         String username=request.getParameter("username");
         String userpass=request.getParameter("userpass");
+        String inputvalcode=request.getParameter("valcode");
+        HttpSession session=request.getSession();
+        String valcode=(String)session.getAttribute("valcode");
         //输出流
         PrintWriter out=response.getWriter();
 
@@ -59,6 +66,19 @@ public class LoginServlet1 extends HttpServlet {
 		}else{//返回登录页面
 			out.println("<script>window.location.href='myaccount.html'</script>");
 		}*/
+        if(inputvalcode!=null&&valcode!=null&&inputvalcode.equals(valcode)){
+            User user=new User();
+            user.setUsername(username);
+            user.setUserpass(userpass);
+            UserDao userdao=new UserDao();
+            boolean ok=userdao.queryByUser(user);
+            if(ok){
+                out.println("<script>window.location.href='index.html'</script>");
+            }else{
+                out.println("<script>window.location.href='myaccount.html'</script>");
+            }}else{
+            out.println("<script>window.location.href='myaccount.html'</script>");
+        }
         try {//加载驱动  把相应的jar包放入web-inf 下面的lib文件夹中
             Class.forName("com.mysql.jdbc.Driver");
         } catch (ClassNotFoundException e) {
