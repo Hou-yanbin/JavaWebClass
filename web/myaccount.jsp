@@ -12,6 +12,9 @@ function changvalcode() {
 	
 }
 
+
+
+
 </script>
 </head>
 <body>
@@ -21,11 +24,11 @@ function changvalcode() {
        		<div class="logo"><a href="index.html"><img src="images/logo.gif" alt="" title="" border="0" /></a></div>            
         <div id="menu">
             <ul> 
-            <li class="selected"><a href="index.html">主页</a></li>
+            <li class="selected"><a href="index.jsp">主页</a></li>
             <li><a href="about.html">公司简介</a></li>
             <li><a href="category.html">图书</a></li>
             <li><a href="specials.html">特价图书</a></li>
-            <li class="selected"><a href="myaccount.html">我的账户</a></li>
+            <li class="selected"><a href="myaccount.jsp">我的账户</a></li>
             <li><a href="register.html">注册</a></li>
             <li><a href="details.html">价格</a></li>
             <li><a href="contact.html">联系我们</a></li>                                                                      
@@ -92,7 +95,18 @@ function changvalcode() {
         <div class="right_content">
         
                 	<div class="languages_box"></div>
-                <div class="currency"></div>
+                <%
+        	String username=(String)session.getAttribute("username");
+        	String label="没有登录，无法进行商品的购买";
+        	if(username!=null&&!username.equals("")){
+        		label="欢迎"+username+"登录本系统！！！！"+"<a href='LogOutServlet'>退出系统</a>";
+        				
+        	}
+        	
+        	
+        	
+        	%>
+                <div class="currency"><%=label %></div>
                 
                 
               <div class="cart">

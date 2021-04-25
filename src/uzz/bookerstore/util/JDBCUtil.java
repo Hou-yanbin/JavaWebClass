@@ -1,4 +1,4 @@
-package bookstore.util;
+package uzz.bookerstore.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,9 +7,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class JDBCUtil {
-	
+
 	public static Connection getConn(){
-		
+
 		Connection conn=null;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -21,17 +21,17 @@ public class JDBCUtil {
 		String user="root";
 		String password="7758521";
 		try {
-			conn=DriverManager.getConnection(url,user,password);
+			conn=DriverManager.getConnection(url, user, password);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-			
+
 		return conn;
-		
+
 	}
 	public static void release(ResultSet rs,PreparedStatement ps,Connection conn){
-		
+
 		if(rs!=null){
 			try {
 				rs.close();
@@ -56,12 +56,12 @@ public class JDBCUtil {
 				e.printStackTrace();
 			}
 		}
-		
+
 	}
-	
-public static void release(PreparedStatement ps,Connection conn){
-		
-		
+
+	public static void release(PreparedStatement ps,Connection conn){
+
+
 		if(ps!=null){
 			try {
 				ps.close();
@@ -78,7 +78,7 @@ public static void release(PreparedStatement ps,Connection conn){
 				e.printStackTrace();
 			}
 		}
-		
+
 	}
 
 }

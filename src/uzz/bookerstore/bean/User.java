@@ -1,4 +1,4 @@
-package bookstore.bean;
+package uzz.bookerstore.bean;
 
 public class User {
 private String username,userpass,email,telephone,company,address;
